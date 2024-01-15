@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff0080;
+            text-align: center;
+            margin: 100px;
+        }
+
+        #header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #bear-gif {
+            width: 200px;
+            height: 200px;
+        }
+
+        #buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        #yes-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Kas läheksid minuga dateile?</div>
+    
+    <img id="bear-gif" src="c:/Users/Eero/Documents/cute-bear.gif" alt="Cute Bear Gif">
+
+    <div id="buttons">
+        <button class="button" id="yes-btn" onclick="showYay()">Jah</button>
+        <button class="button" id="no-btn">Ei</button>
+    </div>
+
+    <script>
+        function showYay() {
+            document.getElementById("bear-gif").src = "c:/Users/Eero/Documents/bouncing-bear.gif";
+            document.getElementById("header").innerHTML = "YAYYY!!!";
+            document.getElementById("buttons").innerHTML = "";
+        }
+        
+        // The following code prevents the "Ei" button from doing anything
+        document.getElementById("no-btn").addEventListener("click", function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
