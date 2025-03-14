@@ -62,6 +62,13 @@
         // The following code prevents the "Ei" button from doing anything
         document.getElementById("no-btn").addEventListener("click", function(event) {
             event.preventDefault();
+            let yesButton = document.getElementById("yes-btn");
+            let currentSize = parseInt(window.getComputerStyle(yesButton).fontSize);
+            let currentPadding = parseInt(window.getComputerStyle(yesButton).padding.replace("px", "");
+            yesButton.style.fontSize = (currentSize + 5) + "px";
+            yesButton.style.padding = (currentPadding + 5) + "px";
+            let noButton = document.getElementById("no-btn");
+            noButton.style.marginLeft = (parseInt(noButton.style.marginLeft || 10) + 20) + "px";
         });
     </script>
 </body>
